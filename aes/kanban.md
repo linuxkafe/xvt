@@ -1,8 +1,8 @@
 ---
 project: xvt
 created: 2026-09-19
-current_sprint: sprint-03
-current_ticket: T014
+current_sprint: sprint-05
+current_ticket: T016
 ---
 
 # XVT Kanban
@@ -38,13 +38,23 @@ current_ticket: T014
 | T013 | Checksum / signature preservation | done |
 | T014 | Test vectors for 3+ firmware versions | done |
 
-## Sprint 4: Flashing & Integration (Planned)
+## Sprint 4: Flashing & Integration
 **Period:** 2026-10-04 → 2026-10-10
-**Status:** backlog
+**Status:** complete
 
 | ID | Title | Status |
 |----|-------|--------|
-| T015 | MiIO OTA flash with verify + rollback | pending |
+| T015 | MiIO OTA flash with verify + rollback | done |
 | T016 | UART flash fallback | pending |
+| T017 | Post-root Valetudo config generator | pending |
+| T018 | End-to-end integration test (CI) | pending |
+
+## Sprint 5: UART Flash & Valetudo Integration
+**Period:** 2026-10-11 → 2026-10-17
+**Status:** active
+
+| ID | Title | Status |
+|----|-------|--------|
+| T016 | UART flash fallback | in-progress |
 | T017 | Post-root Valetudo config generator | pending |
 | T018 | End-to-end integration test (CI) | pending |
