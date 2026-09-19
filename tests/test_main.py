@@ -1,13 +1,36 @@
-"""Sample test for AES project."""
+"""Tests for XVT CLI."""
 
-from src.main import main
+from click.testing import CliRunner
+
+from src.main import cli
 
 
-def test_main_output(capsys):
-    """Test that main() prints expected output."""
-    main()
-    captured = capsys.readouterr()
-    assert "Hello from AES project!" in captured.out
+def test_cli_help():
+    runner = CliRunner()
+    result = runner.invoke(cli, ["--help"])
+    assert result.exit_code == 0
+    assert "XVT - Xiaomi Vacuum/Vale Tudo" in result.output
+
+
+def test_scan_help():
+    runner = CliRunner()
+    result = runner.invoke(cli, ["scan", "--help"])
+    assert result.exit_code == 0
+    assert "Discover Xiaomi vacuums" in result.output
+
+
+def test_inject_help():
+    runner = CliRunner()
+    result = runner.invoke(cli, ["inject", "--help"])
+    assert result.exit_code == 0
+    assert "Inject SSH key" in result.output
+
+
+def test_patch_help():
+    runner = CliRunner()
+    result = runner.invoke(cli, ["patch", "--help"])
+    assert result.exit_code == 0
+    assert "Patch firmware" in result.output
 
 
 def test_version():

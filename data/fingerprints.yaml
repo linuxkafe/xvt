@@ -1,0 +1,168 @@
+# XVT Device Fingerprint Database
+# Sources: valetudo.cloud, builder.dontvacuum.me, robotinfo.dev
+# Format: model -> firmware range -> exploit vectors
+
+fingerprints:
+  # Xiaomi Mi Robot Vacuum (1st gen)
+  - model: "rockrobo.vacuum.s5"
+    name: "Mi Robot Vacuum (S5)"
+    vendor: "xiaomi"
+    firmware_min: "1.0.0"
+    firmware_max: "3.5.9"
+    vectors:
+      - type: "uart"
+        description: "UART header on mainboard, requires soldering"
+        difficulty: "hard"
+        requirements: ["physical_access", "uart_adapter"]
+      - type: "su_binary"
+        description: "Pre-rooted firmware available for downgrade"
+        difficulty: "medium"
+        requirements: ["ota_downgrade"]
+    notes: "First gen, well documented. UART pins exposed."
+
+  - model: "rockrobo.vacuum.s6"
+    name: "Mi Robot Vacuum S6 (gen1)"
+    vendor: "xiaomi"
+    firmware_min: "1.0.0"
+    firmware_max: "3.5.9"
+    vectors:
+      - type: "uart"
+        description: "UART header on mainboard"
+        difficulty: "hard"
+        requirements: ["physical_access", "uart_adapter"]
+      - type: "su_binary"
+        description: "Pre-rooted firmware available"
+        difficulty: "medium"
+        requirements: ["ota_downgrade"]
+    notes: "Similar to S5, different mainboard layout."
+
+  # Xiaomi Mi Robot Vacuum S6 (gen2) / S6 Pure
+  - model: "dreame.vacuum.p2008"
+    name: "Mi Robot Vacuum S6 Pure / S6 gen2"
+    vendor: "dreame"
+    firmware_min: "1.0.0"
+    firmware_max: "30081"
+    vectors:
+      - type: "dustbin"
+        description: "Dustbin sensor exploit (short pins during boot)"
+        difficulty: "medium"
+        requirements: ["physical_access"]
+      - type: "ota_downgrade"
+        description: "Downgrade to firmware <= 30081 for dustbin vector"
+        difficulty: "medium"
+        requirements: ["miio_token"]
+    notes: "Dustbin vector patched in firmware > 30081."
+
+  # Viomi V8 / S7
+  - model: "viomi.vacuum.v8"
+    name: "Viomi V8 / Viomi S7"
+    vendor: "viomi"
+    firmware_min: "1.0.0"
+    firmware_max: "30081"
+    vectors:
+      - type: "dustbin"
+        description: "Dustbin sensor exploit"
+        difficulty: "medium"
+        requirements: ["physical_access"]
+      - type: "ota_downgrade"
+        description: "Downgrade to firmware <= 30081"
+        difficulty: "medium"
+        requirements: ["miio_token"]
+    notes: "Discovered at 10.0.0.103 in test network."
+
+  # Roborock S5 Max
+  - model: "roborock.vacuum.s5max"
+    name: "Roborock S5 Max"
+    vendor: "roborock"
+    firmware_min: "1.0.0"
+    firmware_max: "30081"
+    vectors:
+      - type: "dustbin"
+        description: "Dustbin sensor exploit"
+        difficulty: "medium"
+        requirements: ["physical_access"]
+      - type: "ota_downgrade"
+        description: "Downgrade to vulnerable firmware"
+        difficulty: "medium"
+        requirements: ["miio_token"]
+
+  # Roborock S6 MaxV
+  - model: "roborock.vacuum.s6maxv"
+    name: "Roborock S6 MaxV"
+    vendor: "roborock"
+    firmware_min: "1.0.0"
+    firmware_max: "30081"
+    vectors:
+      - type: "dustbin"
+        description: "Dustbin sensor exploit"
+        difficulty: "medium"
+        requirements: ["physical_access"]
+      - type: "ota_downgrade"
+        description: "Downgrade to vulnerable firmware"
+        difficulty: "medium"
+        requirements: ["miio_token"]
+
+  # Dreame D9 / F9 / L10 Pro
+  - model: "dreame.vacuum.d9"
+    name: "Dreame D9 / F9 / L10 Pro"
+    vendor: "dreame"
+    firmware_min: "1.0.0"
+    firmware_max: "30081"
+    vectors:
+      - type: "dustbin"
+        description: "Dustbin sensor exploit"
+        difficulty: "medium"
+        requirements: ["physical_access"]
+      - type: "ota_downgrade"
+        description: "Downgrade to vulnerable firmware"
+        difficulty: "medium"
+        requirements: ["miio_token"]
+
+  # Xiaomi T7 / Mop 2
+  - model: "xiaomi.vacuum.t7"
+    name: "Xiaomi Robot Vacuum T7"
+    vendor: "xiaomi"
+    firmware_min: "1.0.0"
+    firmware_max: "99999"
+    vectors:
+      - type: "ota_downgrade"
+        description: "No known hardware vectors, OTA downgrade only"
+        difficulty: "hard"
+        requirements: ["miio_token", "vulnerable_firmware_image"]
+    notes: "Newer model, no UART/dustbin vectors known."
+
+  # Dreame L10s Ultra / Z10 Pro
+  - model: "dreame.vacuum.l10s"
+    name: "Dreame L10s Ultra / Z10 Pro"
+    vendor: "dreame"
+    firmware_min: "1.0.0"
+    firmware_max: "99999"
+    vectors:
+      - type: "ota_downgrade"
+        description: "OTA downgrade only, no hardware vectors known"
+        difficulty: "hard"
+        requirements: ["miio_token", "vulnerable_firmware_image"]
+    notes: "Latest gen, all hardware vectors patched."
+
+# Vector type definitions
+vector_types:
+  uart:
+    name: "UART Serial Header"
+    description: "Access via UART pins on mainboard, inject keys via shell"
+    persistent: true
+    requires_opening: true
+  dustbin:
+    name: "Dustbin Sensor Short"
+    description: "Short dustbin sensor pins during boot to drop to shell"
+    persistent: true
+    requires_opening: true
+  ota_downgrade:
+    name: "OTA Firmware Downgrade"
+    description: "Flash older vulnerable firmware via MiIO OTA"
+    persistent: false
+    requires_opening: false
+  su_binary:
+    name: "Pre-rooted Firmware (su binary)"
+    description: "Flash firmware with su binary and dropbear pre-installed"
+    persistent: true
+    requires_opening: false

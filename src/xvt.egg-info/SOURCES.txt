@@ -1,0 +1,14 @@
+pyproject.toml
+src/xvt/__init__.py
+src/xvt/crypto.py
+src/xvt/firmware.py
+src/xvt/scanner.py
+src/xvt.egg-info/PKG-INFO
+src/xvt.egg-info/SOURCES.txt
+src/xvt.egg-info/dependency_links.txt
+src/xvt.egg-info/requires.txt
+src/xvt.egg-info/top_level.txt
+tests/test_crypto.py
+tests/test_firmware.py
+tests/test_main.py
+tests/test_scanner.py

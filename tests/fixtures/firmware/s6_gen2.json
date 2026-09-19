@@ -1,0 +1,42 @@
+{
+  "model": "dreame.vacuum.p2008",
+  "name": "Mi Robot Vacuum S6 Pure / S6 gen2",
+  "vendor": "dreame",
+  "firmware_version": "30081",
+  "expected_partitions": [
+    {
+      "name": "header",
+      "offset": 0,
+      "size": 512,
+      "format": "miot_ota",
+      "checksum": "00000000",
+      "checksum_type": "crc32"
+    },
+    {
+      "name": "kernel",
+      "offset": 512,
+      "size": 3145728,
+      "format": "zimage",
+      "checksum": "b2c3d4e5",
+      "checksum_type": "crc32"
+    },
+    {
+      "name": "rootfs",
+      "offset": 3146240,
+      "size": 25165824,
+      "format": "squashfs",
+      "checksum": "f6a7b8c9",
+      "checksum_type": "crc32"
+    },
+    {
+      "name": "dtb",
+      "offset": 28312064,
+      "size": 131072,
+      "format": "dtb",
+      "checksum": "d1e2f3a4",
+      "checksum_type": "crc32"
+    }
+  ],
+  "exploit_vectors": ["dustbin", "ota_downgrade"],
+  "notes": "S6 gen2 - Dustbin sensor exploit (fw <= 30081), OTA downgrade available"
+}

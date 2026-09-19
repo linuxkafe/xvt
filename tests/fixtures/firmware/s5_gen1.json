@@ -1,0 +1,42 @@
+{
+  "model": "rockrobo.vacuum.s5",
+  "name": "Mi Robot Vacuum (S5 gen1)",
+  "vendor": "xiaomi",
+  "firmware_version": "3.5.9",
+  "expected_partitions": [
+    {
+      "name": "header",
+      "offset": 0,
+      "size": 512,
+      "format": "miot_ota",
+      "checksum": "00000000",
+      "checksum_type": "crc32"
+    },
+    {
+      "name": "kernel",
+      "offset": 512,
+      "size": 2097152,
+      "format": "zimage",
+      "checksum": "a1b2c3d4",
+      "checksum_type": "crc32"
+    },
+    {
+      "name": "rootfs",
+      "offset": 2097664,
+      "size": 16777216,
+      "format": "cramfs",
+      "checksum": "e5f6a7b8",
+      "checksum_type": "crc32"
+    },
+    {
+      "name": "dtb",
+      "offset": 18874880,
+      "size": 65536,
+      "format": "dtb",
+      "checksum": "a1b2c3d4",
+      "checksum_type": "crc32"
+    }
+  ],
+  "exploit_vectors": ["uart", "su_binary"],
+  "notes": "S5 gen1 - UART exploit available, pre-rooted firmware for downgrade"
+}

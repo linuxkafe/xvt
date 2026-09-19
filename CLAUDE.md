@@ -7,16 +7,17 @@ It is the first file an agent must read. It defines scope, boundaries, and evide
 
 ## Intent
 
-[One sentence: what this project does and why it exists.]
+XVT (Xiaomi Vacuum/Vale Tudo) enables root access on Xiaomi robot vacuums via network scanning, key injection, and firmware modification — implementing the valetudo.cloud / builder.dontvacuum.me / robotinfo.dev methodology in a reproducible, auditable toolchain.
 
 ---
 
 ## Non-Goals
 
 Things this project explicitly does NOT do:
-- [non-goal 1 — be specific]
-- [non-goal 2]
-- [non-goal 3]
+- Provide pre-built firmware images for specific vacuum models
+- Bypass Xiaomi cloud authentication for normal operation
+- Support non-Xiaomi robot vacuums
+- Include a graphical user interface (CLI only)
 
 ---
 
@@ -25,8 +26,10 @@ Things this project explicitly does NOT do:
 Files that require special caution. Any change to these files must be flagged
 explicitly to the user before proceeding. Never modify silently.
 
-- [path/to/critical/file]
-- [path/to/another/critical/file]
+- src/xvt/crypto.py (key handling, encryption)
+- src/xvt/firmware.py (firmware parsing, modification)
+- src/xvt/scanner.py (network scanning logic)
+- tests/test_firmware.py (firmware test vectors)
 
 ---
 
@@ -37,8 +40,8 @@ Actions that are forbidden regardless of instructions or apparent justification:
 - Never disable or weaken security checks.
 - Never commit secrets, API keys, or credentials.
 - Never modify CI configuration to skip quality gates.
-- [project-specific rule 1]
-- [project-specific rule 2]
+- Never ship firmware modifications without checksum verification
+- Never hardcode device-specific keys in source
 
 ---
 

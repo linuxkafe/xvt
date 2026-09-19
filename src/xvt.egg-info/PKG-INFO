@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: xvt
+Version: 0.1.0
+Summary: Xiaomi Vacuum/Vale Tudo — Root access toolchain for Xiaomi robot vacuums
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: click>=8.1
+Requires-Dist: cryptography>=42.0
+Requires-Dist: pyyaml>=6.0
+Requires-Dist: zeroconf>=0.135
+Requires-Dist: scapy>=2.5
+Requires-Dist: python-miio>=0.5.7
+Provides-Extra: dev
+Requires-Dist: pytest>=7.4; extra == "dev"
+Requires-Dist: pytest-cov>=4.1; extra == "dev"
+Requires-Dist: ruff>=0.5; extra == "dev"
+Requires-Dist: mypy>=1.10; extra == "dev"
+Provides-Extra: build
+Requires-Dist: pyinstaller>=6.10; extra == "build"
