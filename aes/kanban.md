@@ -1,8 +1,8 @@
 ---
 project: xvt
 created: 2026-09-19
-current_sprint: sprint-06
-current_ticket: T017
+current_sprint: complete
+current_ticket: complete
 ---
 
 # XVT Kanban
@@ -61,9 +61,49 @@ current_ticket: T017
 
 ## Sprint 6: CI Integration & Polish
 **Period:** 2026-10-18 → 2026-10-24
-**Status:** active
+**Status:** complete
 
 | ID | Title | Status |
 |----|-------|--------|
-| T017 | Post-root Valetudo config generator | in-progress |
-| T018 | End-to-end integration test (CI) | pending |
+| T017 | Post-root Valetudo config generator | done |
+| T018 | End-to-end integration test (CI) | done |
+
+## Sprint 7: Production Hardening & Release
+**Period:** 2026-10-25 → 2026-10-31
+**Status:** complete
+
+| ID | Title | Status |
+|----|-------|--------|
+| T019 | Production release packaging | done |
+| T020 | Documentation & runbooks | done |
+| T021 | Security audit & hardening | done |
+
+## Sprint 8: Community & Ecosystem
+**Period:** 2026-11-01 → 2026-11-07
+**Status:** complete
+
+| ID | Title | Status |
+|----|-------|--------|
+| T022 | Community plugins & integrations | done |
+| T023 | Multi-language support (i18n) | done |
+| T024 | Plugin marketplace & SDK | done |
+
+## Sprint 9: Advanced Features & Scale
+**Period:** 2026-11-08 → 2026-11-14
+**Status:** complete
+
+| ID | Title | Status |
+|----|-------|--------|
+| T025 | Fleet management & multi-device orchestration | done |
+| T026 | Cloud sync & backup | done |
+| T027 | Advanced automation engine | done |
+
+## Sprint 10: Enterprise & Compliance
+**Period:** 2026-11-15 → 2026-11-21
+**Status:** complete
+
+| ID | Title | Status |
+|----|-------|--------|
+| T028 | Enterprise SSO & RBAC | done |
+| T029 | Audit logging & compliance | done |
+| T030 | Disaster recovery & HA | done |
