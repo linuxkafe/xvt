@@ -2,7 +2,7 @@
 project: xvt
 created: 2026-09-19
 current_sprint: sprint-03
-current_ticket: T006
+current_ticket: T014
 ---
 
 # XVT Kanban
@@ -28,7 +28,7 @@ current_ticket: T006
 
 ## Sprint 3: Firmware Modification Engine
 **Period:** 2026-09-26 → 2026-10-03
-**Status:** active
+**Status:** complete
 
 | ID | Title | Status |
 |----|-------|--------|
@@ -37,6 +37,14 @@ current_ticket: T006
 | T012 | Patch engine (dropbear, su, authorized_keys) | done |
 | T013 | Checksum / signature preservation | done |
 | T014 | Test vectors for 3+ firmware versions | done |
-| T012 | Patch engine (dropbear, su, authorized_keys) | pending |
-| T013 | Checksum / signature preservation | pending |
-| T014 | Test vectors for 3+ firmware versions | pending |
+
+## Sprint 4: Flashing & Integration (Planned)
+**Period:** 2026-10-04 → 2026-10-10
+**Status:** backlog
+
+| ID | Title | Status |
+|----|-------|--------|
+| T015 | MiIO OTA flash with verify + rollback | pending |
+| T016 | UART flash fallback | pending |
+| T017 | Post-root Valetudo config generator | pending |
+| T018 | End-to-end integration test (CI) | pending |
