@@ -1,8 +1,8 @@
 ---
 project: xvt
 created: 2026-09-19
-current_sprint: sprint-05
-current_ticket: T016
+current_sprint: sprint-06
+current_ticket: T017
 ---
 
 # XVT Kanban
@@ -51,10 +51,19 @@ current_ticket: T016
 
 ## Sprint 5: UART Flash & Valetudo Integration
 **Period:** 2026-10-11 → 2026-10-17
+**Status:** complete
+
+| ID | Title | Status |
+|----|-------|--------|
+| T016 | UART flash fallback | done |
+| T017 | Post-root Valetudo config generator | done |
+| T018 | End-to-end integration test (CI) | pending |
+
+## Sprint 6: CI Integration & Polish
+**Period:** 2026-10-18 → 2026-10-24
 **Status:** active
 
 | ID | Title | Status |
 |----|-------|--------|
-| T016 | UART flash fallback | in-progress |
-| T017 | Post-root Valetudo config generator | pending |
+| T017 | Post-root Valetudo config generator | in-progress |
 | T018 | End-to-end integration test (CI) | pending |
